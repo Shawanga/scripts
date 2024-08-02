@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
 .Python
 build/
@@ -126,13 +123,20 @@ celerybeat.pid
 .venv
 env/
 venv/
-ENV/
+ENV/pyc
 env.bak/
 venv.bak/
 
 # Spyder project settings
 .spyderproject
 .spyproject
+
+# Compiled Python files
+*.pyc
+
+# IDE
+*.idea
+*.iml
 
 # Rope project settings
 .ropeproject
@@ -160,3 +164,20 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# Files in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.DS_Store?
+*.DS_Store
+draft/*
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
