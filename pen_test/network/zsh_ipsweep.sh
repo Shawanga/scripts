@@ -5,7 +5,7 @@
 
 if [ -z "$1" ]; then 
     echo "Add IP network subnet (e.g., 192.168.1.0/24)."
-    echo "Syntax: ./zsh_ipsweep.sh 192.168.1.0/24"
+    echo "Syntax: ./zsh_ipsweep.sh x.x.x.x/x"
 else
     # calculating network range with ipcalc
     network=$(ipcalc -n $1 | grep Network | awk '{print $2}')
