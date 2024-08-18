@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ip-sweep script to scan only given subnet
-# Prerequisite: bash
+# Prerequisite: bash, ipcalc (sudo apt install ipcalc)
 # equivalent to nmap -sn x.x.x.x/24
 
 if [ "$1" == "" ]; then 
