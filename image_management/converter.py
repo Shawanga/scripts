@@ -1,9 +1,9 @@
-'''
+"""
 Convert an image to a different format.
 Usage: python3 converter.py /input_path.webp [-jpg] [-png] [-webp] [-s SIZE] [-o OUTPUT] [-v]
 
 Author: Yana Nesterenko
-'''
+"""
 
 import argparse
 import os
@@ -27,9 +27,9 @@ args = parser.parse_args()
 
 
 def convert_image(path, output, size, file_format):
-    '''
+    """
     Convert a file to a different format.
-    '''
+    """
     image = Image.open(path)
     if size:
         image = image.resize(size)

