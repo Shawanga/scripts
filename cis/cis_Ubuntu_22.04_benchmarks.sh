@@ -17,7 +17,7 @@ ss -tuln | awk '($5!~/%lo:/ && $5!~/127.0.0.1:/ && $5!~/::1/) {split($5, a, ":")
                 covered=true
                 break
             fi
-    done < <(echo "${ufw_out}" | grep -P "^\h*(?:[^\s]+\s+){3}(\d+):(\d+)")
+        done < <(echo "${ufw_out}" | grep -P "^\h*(?:[^\s]+\s+){3}(\d+):(\d+)")
 
 
         if [[ "${covered}" != true ]]; then
